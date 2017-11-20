@@ -50,7 +50,7 @@ class Cart extends Component {
         onExit={this.handleExit}
       >
         <div className="fixed z-max right-0 vh-100 bg-dark-green w-100 w-third-l">
-          <header className="pa3 cf z-2 fixed w-100 bb b--white-10 tr">
+          <header className="pa3 cf absolute w-100 bb b--white-10 tr">
             <button
               className="dim white bg-transparent sans-serif bn pointer"
               onClick={this.props.toggleCart}
