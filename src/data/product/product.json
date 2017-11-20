@@ -1,0 +1,44 @@
+[
+  {
+    "id": "prod1",
+    "title": "11 Square",
+    "image": "./prod02.jpg",
+    "size": 1
+  },
+  {
+    "id": "prod4",
+    "title": "19",
+    "image": "./prod04.jpg",
+    "size": 1
+  },
+  {
+    "id": "prod6",
+    "title": "09 Square",
+    "image": "./prod06.jpg",
+    "size": 2
+  },
+  {
+    "id": "prod7",
+    "title": "12 Square",
+    "image": "./prod07.jpg",
+    "size": 2
+  },
+  {
+    "id": "prod2",
+    "title": "02 Square",
+    "image": "./prod01.jpg",
+    "size": 2
+  },
+  {
+    "id": "prod3",
+    "title": "21",
+    "image": "./prod03.jpg",
+    "size": 1
+  },
+  {
+    "id": "prod5",
+    "title": "01",
+    "image": "./prod05.jpg",
+    "size": 1
+  }
+]

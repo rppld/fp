@@ -1,0 +1,25 @@
+{
+  "extends": ["standard"],
+  "plugins": ["prettier", "react"],
+  "rules": {
+    "quotes": [2, "double"],
+    "semi": [2, "never"],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "globals": {
+    "graphql": false
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "fp",
+  "version": "1.0.0",
+  "description": "FP npm dependencies",
+  "main": "index.js",
+  "author": "Philipp Rappold <philipp@rppld.co>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "lint": "eslint .",
+    "prettier": "prettier --config .prettierrc --write \"{gatsby-*.js,{flow-typed,plugins,src}/**/*.js}\"",
+    "prettier:diff": "prettier --config .prettierrc --list-different \"{gatsby-*.js,{flow-typed,plugins,src}/**/*.js}\"",
+    "reset": "rimraf ./.cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/rppld/fp"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "gatsby": "^1.9.118",
+    "gatsby-link": "^1.6.28",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-sass": "^1.0.13",
+    "gatsby-plugin-sharp": "^1.6.21",
+    "gatsby-source-filesystem": "^1.5.8",
+    "gatsby-transformer-json": "^1.0.12",
+    "gatsby-transformer-sharp": "^1.6.14",
+    "prettier": "^1.8.2",
+    "react-redux": "^5.0.6",
+    "react-transition-group": "^2.2.1",
+    "redux": "^3.7.2",
+    "rimraf": "^2.6.2",
+    "styled-components": "^2.2.3"
+  },
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "imagesloaded": "^4.1.3",
+    "scrolltrigger-classes": "^0.3.6",
+    "sticky-js": "^1.2.0"
+  }
+}
