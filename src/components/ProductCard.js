@@ -9,7 +9,7 @@ const Purchaser = props => (
       {props.size === 3 && (
         <div className="mb3">
           <h3 className="f3 f1-l b lh-title mb1">{props.title}</h3>
-          <span className="f3 f1-l">€&nbsp;{props.price}</span>
+          <span className="f3 f1-l">{props.price}&nbsp;€</span>
         </div>
       )}
 
