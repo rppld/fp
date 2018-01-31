@@ -7,19 +7,10 @@ import ImagesLoaded from "react-images-loaded"
 import Sticky from "sticky-js"
 
 class ProductPage extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      sticky: null
-    }
-  }
-
-  componentDidMount () {
-    this.state.sticky = new Sticky(".sticky")
-  }
-
-  handleOnProgress = () => {
-    this.state.sticky.update()
+  handleDone = () => {
+    /* eslint-disable no-new */
+    new Sticky("[data-sticky]")
+    /* eslint-enable */
   }
 
   render () {
@@ -34,7 +25,7 @@ class ProductPage extends Component {
             <ImagesLoaded
               elementType={"ul"} // defaults to 'div'
               className={"list ma0 pa0 grid grid-2-columns"} // defaults to 'images-loaded-container'
-              onProgress={this.handleOnProgress}
+              done={this.handleDone}
             >
               {data.allProductJson.edges.map(({ node }) => (
                 <li
@@ -58,7 +49,8 @@ class ProductPage extends Component {
           </div>
 
           <div
-            className="sidebar w-third-ns fl-ns fixed sticky"
+            className="sidebar w-third-ns fl-ns fixed"
+            data-sticky
             data-sticky-class="fixed"
           >
             <Purchaser lineItem={{ id: 5, title: "Low Top Ghost White" }} />
