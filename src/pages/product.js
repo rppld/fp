@@ -15,7 +15,7 @@ class ProductPage extends Component {
   }
 
   componentDidMount () {
-    this.state.sticky = new Sticky("[data-sticky]")
+    this.state.sticky = new Sticky(".sticky")
   }
 
   handleOnProgress = () => {
@@ -58,8 +58,7 @@ class ProductPage extends Component {
           </div>
 
           <div
-            className="sidebar w-third-ns fl-ns fixed"
-            data-sticky
+            className="sidebar w-third-ns fl-ns fixed sticky"
             data-sticky-class="fixed"
           >
             <Purchaser lineItem={{ id: 5, title: "Low Top Ghost White" }} />
