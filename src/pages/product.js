@@ -3,14 +3,22 @@ import PropTypes from "prop-types"
 import Spacer from "../components/Spacer"
 import Purchaser from "../components/Purchaser"
 import RelatedProducts from "../components/RelatedProducts"
-import ImagesLoaded from "react-images-loaded"
 import Sticky from "sticky-js"
 
 class ProductPage extends Component {
-  handleDone = () => {
-    /* eslint-disable no-new */
-    new Sticky("[data-sticky]")
-    /* eslint-enable */
+  constructor (props) {
+    super(props)
+    this.state = {
+      sticky: null
+    }
+  }
+
+  componentDidMount () {
+    this.state.sticky = new Sticky(".sticky")
+  }
+
+  handleOnLoad = () => {
+    this.state.sticky.update()
   }
 
   render () {
@@ -22,11 +30,7 @@ class ProductPage extends Component {
         <main className="relative z-1 bg-black-10 cf" data-sticky-container>
           <div className="w-two-thirds-ns fl-ns">
             <Spacer />
-            <ImagesLoaded
-              elementType={"ul"} // defaults to 'div'
-              className={"list ma0 pa0 grid grid-2-columns"} // defaults to 'images-loaded-container'
-              done={this.handleDone}
-            >
+            <ul className="list ma0 pa0 grid grid-2-columns">
               {data.allProductJson.edges.map(({ node }) => (
                 <li
                   key={node.id}
@@ -40,17 +44,17 @@ class ProductPage extends Component {
                     className="v-mid w-100"
                     sizes={node.image.childImageSharp.responsiveSizes.sizes}
                     srcSet={node.image.childImageSharp.responsiveSizes.srcSet}
+                    onLoad={this.handleOnLoad}
                     alt={node.title}
                     data-scroll
                   />
                 </li>
               ))}
-            </ImagesLoaded>
+            </ul>
           </div>
 
           <div
-            className="sidebar w-third-ns fl-ns fixed"
-            data-sticky
+            className="sidebar w-third-ns fl-ns fixed sticky"
             data-sticky-class="fixed"
           >
             <Purchaser lineItem={{ id: 5, title: "Low Top Ghost White" }} />

@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "animejs": "^2.2.0",
-    "react-images-loaded": "^1.1.0",
     "scrolltrigger-classes": "^0.3.6",
     "sticky-js": "^1.2.0"
   }
