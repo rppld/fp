@@ -3,16 +3,19 @@ import PropTypes from "prop-types"
 import Spacer from "../components/Spacer"
 import Purchaser from "../components/Purchaser"
 import RelatedProducts from "../components/RelatedProducts"
+import ImagesLoaded from "react-images-loaded"
 import Sticky from "sticky-js"
-import imagesLoaded from "imagesloaded"
 
 class ProductPage extends Component {
-  componentDidMount () {
-    const container = document.querySelector("[data-images-container]")
-    imagesLoaded(container, function () {
-      /* eslint-disable no-new */
-      new Sticky(".sticky")
-    })
+  constructor (props) {
+    super(props)
+    this.state = {
+      sticky: new Sticky("[data-sticky]")
+    }
+  }
+
+  handleOnProgress = () => {
+    this.state.sticky.update()
   }
 
   render () {
@@ -24,9 +27,10 @@ class ProductPage extends Component {
         <main className="relative z-1 bg-black-10 cf" data-sticky-container>
           <div className="w-two-thirds-ns fl-ns">
             <Spacer />
-            <ul
-              className="list ma0 pa0 grid grid-2-columns"
-              data-images-container
+            <ImagesLoaded
+              elementType={"ul"} // defaults to 'div'
+              className={"list ma0 pa0 grid grid-2-columns"} // defaults to 'images-loaded-container'
+              onProgress={this.handleOnProgress}
             >
               {data.allProductJson.edges.map(({ node }) => (
                 <li
@@ -46,11 +50,12 @@ class ProductPage extends Component {
                   />
                 </li>
               ))}
-            </ul>
+            </ImagesLoaded>
           </div>
 
           <div
-            className="sidebar w-third-ns fl-ns fixed sticky"
+            className="sidebar w-third-ns fl-ns fixed"
+            data-sticky
             data-sticky-class="fixed"
           >
             <Purchaser lineItem={{ id: 5, title: "Low Top Ghost White" }} />
