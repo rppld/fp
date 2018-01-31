@@ -10,8 +10,12 @@ class ProductPage extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      sticky: new Sticky("[data-sticky]")
+      sticky: null
     }
+  }
+
+  componentDidMount () {
+    this.state.sticky = new Sticky("[data-sticky]")
   }
 
   handleOnProgress = () => {
