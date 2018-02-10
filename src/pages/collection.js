@@ -24,7 +24,7 @@ const CollectionPage = ({ data }) => (
             size={node.size}
             title={node.title}
             price={node.price}
-            image={node.image.childImageSharp.responsiveSizes}
+            image={node.image.childImageSharp}
           />
         </li>
       ))}
@@ -48,14 +48,8 @@ export const query = graphql`
           price
           image {
             childImageSharp {
-              responsiveSizes {
-                base64
-                aspectRatio
-                src
-                srcSet
-                sizes
-                originalImg
-                originalName
+              sizes(maxWidth: 1080, quality: 90) {
+                ...GatsbyImageSharpSizes
               }
             }
           }

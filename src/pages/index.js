@@ -1,6 +1,7 @@
 import React from "react"
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
+import Image from "gatsby-image"
 import Cover from "../components/Cover"
 import Logo from "../components/Logo"
 
@@ -8,12 +9,7 @@ const getBlock = block => {
   const blocks = {
     image: () => {
       return (
-        <img
-          className="v-mid w-100 sibling"
-          sizes={block.image.childImageSharp.responsiveSizes.sizes}
-          srcSet={block.image.childImageSharp.responsiveSizes.srcSet}
-          alt={block.title}
-        />
+        <Image className="v-mid w-100 sibling" sizes={block.image.childImageSharp.sizes} alt={block.title} />
       )
     },
     link: () => {
@@ -87,14 +83,8 @@ export const query = graphql`
           title
           image {
             childImageSharp {
-              responsiveSizes {
-                base64
-                aspectRatio
-                src
-                srcSet
-                sizes
-                originalImg
-                originalName
+              sizes(maxWidth: 1080, quality: 90) {
+                ...GatsbyImageSharpSizes
               }
             }
           }

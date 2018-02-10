@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Link from "gatsby-link"
+import Image from "gatsby-image"
 import SizePicker from "../components/SizePicker"
 
 const Purchaser = props => (
@@ -23,13 +24,7 @@ const Purchaser = props => (
       <SizePicker />
     </div>
 
-    <img
-      className="v-mid w-100 sibling"
-      sizes={props.image.sizes}
-      srcSet={props.image.srcSet}
-      alt={props.title}
-      data-scroll
-    />
+    <Image className="v-mid w-100 sibling" sizes={props.image.sizes} alt={props.title} />
   </Link>
 )
 

@@ -15,7 +15,7 @@ const RelatedProducts = ({ data }) => (
             size={1}
             title={node.title}
             price={node.price}
-            image={node.image.childImageSharp.responsiveSizes}
+            image={node.image.childImageSharp}
           />
         </li>
       ))}

@@ -2,15 +2,14 @@
   "name": "fp",
   "version": "1.0.0",
   "description": "FP npm dependencies",
-  "main": "index.js",
+  "main": "n/a",
   "author": "Philipp Rappold <philipp@rppld.co>",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "lint": "eslint .",
-    "prettier": "prettier --config .prettierrc --write \"{gatsby-*.js,{flow-typed,plugins,src}/**/*.js}\"",
-    "prettier:diff": "prettier --config .prettierrc --list-different \"{gatsby-*.js,{flow-typed,plugins,src}/**/*.js}\"",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "reset": "rimraf ./.cache"
   },
   "repository": {
@@ -31,24 +30,26 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
-    "gatsby": "^1.9.118",
-    "gatsby-link": "^1.6.28",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-sass": "^1.0.13",
-    "gatsby-plugin-sharp": "^1.6.21",
-    "gatsby-source-filesystem": "^1.5.8",
-    "gatsby-transformer-json": "^1.0.12",
-    "gatsby-transformer-sharp": "^1.6.14",
     "prettier": "^1.8.2",
-    "react-redux": "^5.0.6",
-    "react-transition-group": "^2.2.1",
-    "redux": "^3.7.2",
-    "rimraf": "^2.6.2",
-    "styled-components": "^3.1.4"
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
     "animejs": "^2.2.0",
+    "gatsby": "^1.9.158",
+    "gatsby-image": "^1.0.35",
+    "gatsby-link": "^1.6.34",
+    "gatsby-plugin-react-helmet": "^2.0.3",
+    "gatsby-plugin-sharp": "^1.6.25",
+    "gatsby-source-filesystem": "^1.5.14",
+    "gatsby-transformer-json": "^1.0.14",
+    "gatsby-transformer-sharp": "^1.6.16",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.6",
+    "gatsby-plugin-sass": "^1.0.13",
+    "redux": "^3.7.2",
+    "react-transition-group": "^2.2.1",
     "scrolltrigger-classes": "^0.3.6",
-    "sticky-js": "^1.2.0"
+    "sticky-js": "^1.2.0",
+    "styled-components": "^3.1.4"
   }
 }

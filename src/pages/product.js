@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import Image from "gatsby-image"
 import Spacer from "../components/Spacer"
 import Purchaser from "../components/Purchaser"
 import RelatedProducts from "../components/RelatedProducts"
@@ -39,15 +40,9 @@ class ProductPage extends Component {
                       ? "relative"
                       : "grid-span-2-columns relative"
                   }
+                  data-scroll
                 >
-                  <img
-                    className="v-mid w-100"
-                    sizes={node.image.childImageSharp.responsiveSizes.sizes}
-                    srcSet={node.image.childImageSharp.responsiveSizes.srcSet}
-                    onLoad={this.handleOnLoad}
-                    alt={node.title}
-                    data-scroll
-                  />
+                  <Image className="v-mid w-100" sizes={node.image.childImageSharp.sizes} alt={node.title} />
                 </li>
               ))}
             </ul>
@@ -82,14 +77,8 @@ export const query = graphql`
           title
           image {
             childImageSharp {
-              responsiveSizes {
-                base64
-                aspectRatio
-                src
-                srcSet
-                sizes
-                originalImg
-                originalName
+              sizes(maxWidth: 1080, quality: 90) {
+                ...GatsbyImageSharpSizes
               }
             }
           }
@@ -105,14 +94,8 @@ export const query = graphql`
           price
           image {
             childImageSharp {
-              responsiveSizes {
-                base64
-                aspectRatio
-                src
-                srcSet
-                sizes
-                originalImg
-                originalName
+              sizes(maxWidth: 1080, quality: 90) {
+                ...GatsbyImageSharpSizes
               }
             }
           }
