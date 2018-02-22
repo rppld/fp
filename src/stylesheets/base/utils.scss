@@ -6,6 +6,23 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.horizontal-overflow-scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.horizontal-overflow-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .tracked-light {
   letter-spacing: 0.05em;
 }
@@ -52,11 +69,6 @@
   grid-template-rows: auto;
 }
 
-.grid-3-columns {
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-}
-
 .grid-span-2-columns {
   grid-column: span 2;
 }
@@ -66,8 +78,13 @@
 }
 
 @media screen and (min-width: 30em) {
-  @for $span from 1 through length(susy-get("columns")) {
-    // .className-ns
+  .grid-ns {
+    display: grid;
+  }
+
+  .grid-2-columns-ns {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
   }
 }
 
@@ -77,6 +94,11 @@
 
 @media screen and (min-width: 60em) {
   // .className-l
+
+  .grid-3-columns-l {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
 }
 
 @media screen and (min-width: 100em) {

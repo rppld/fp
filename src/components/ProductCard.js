@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Link from "gatsby-link"
-import Image from "gatsby-image"
+import Image from "../components/Image"
 import SizePicker from "../components/SizePicker"
+import { getSizesString } from "../helpers"
 
-const Purchaser = props => (
+const ProductCard = props => (
   <Link to="/product/" className="hide-child dim-sibling cf">
     <div className="child absolute z-1 absolute--fill bg-white-60 flex flex flex-column items-center align-center justify-center pa4 tc">
       {props.size === 3 && (
@@ -24,15 +25,15 @@ const Purchaser = props => (
       <SizePicker />
     </div>
 
-    <Image className="v-mid w-100 sibling" sizes={props.image.sizes} alt={props.title} />
+    <Image className="v-mid w-100 sibling" sizes={props.image.sizes} sizesString={getSizesString(props.size)} alt={props.title} />
   </Link>
 )
 
-Purchaser.propTypes = {
+ProductCard.propTypes = {
   size: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.object.isRequired
 }
 
-export default Purchaser
+export default ProductCard

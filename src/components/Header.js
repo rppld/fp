@@ -14,22 +14,22 @@ const mapDispatchToProps = dispatch => {
 }
 
 const Header = props => (
-  <header className="pa3 cf z-2 fixed w-100 bg-white bb b--near-white">
-    <nav className="fl-ns">
-      <ul className="list cf">
-        <li className="fl mr3">
+  <header className="pa3 z-2 fixed w-100 bg-white bb b--near-white flex-l justify-between-l horizontal-overflow-scroll">
+    <nav className="dib">
+      <ul className="list">
+        <li className="dib mr3">
           <Link to="/" className="dim">
             Home
           </Link>
         </li>
 
-        <li className="fl mr3">
+        <li className="dib mr3">
           <Link to="/collection/" className="dim">
             Collection
           </Link>
         </li>
 
-        <li className="fl">
+        <li className="dib mr3 mr0-l">
           <Link to="/product/" className="dim">
             Product
           </Link>
@@ -37,21 +37,21 @@ const Header = props => (
       </ul>
     </nav>
 
-    <nav className="fr-ns">
-      <ul className="list cf">
-        <li className="fl">
+    <nav className="dib">
+      <ul className="list">
+        <li className="dib">
           <span className="dim">Search</span>
         </li>
 
-        <li className="fl ml3">
+        <li className="dib ml3">
           <span className="dim">Account</span>
         </li>
 
-        <li className="fl ml3">
+        <li className="dib ml3">
           <span className="dim">Help</span>
         </li>
 
-        <li className="fl ml3">
+        <li className="dib ml3">
           <button
             className="dim bg-transparent sans-serif bn pointer"
             onClick={props.toggleCart}

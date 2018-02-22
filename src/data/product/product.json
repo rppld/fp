@@ -15,19 +15,19 @@
     "id": "prod6",
     "title": "09 Square",
     "image": "./prod06.jpg",
-    "size": 2
+    "size": 3
   },
   {
     "id": "prod7",
     "title": "12 Square",
     "image": "./prod07.jpg",
-    "size": 2
+    "size": 3
   },
   {
     "id": "prod2",
     "title": "02 Square",
     "image": "./prod01.jpg",
-    "size": 2
+    "size": 3
   },
   {
     "id": "prod3",

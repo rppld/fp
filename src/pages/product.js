@@ -1,27 +1,12 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import Image from "gatsby-image"
+import Image from "../components/Image"
 import Spacer from "../components/Spacer"
 import Purchaser from "../components/Purchaser"
 import RelatedProducts from "../components/RelatedProducts"
-import Sticky from "sticky-js"
+import { getSizesString } from "../helpers"
 
 class ProductPage extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      sticky: null
-    }
-  }
-
-  componentDidMount () {
-    this.state.sticky = new Sticky(".sticky")
-  }
-
-  handleOnLoad = () => {
-    this.state.sticky.update()
-  }
-
   render () {
     const data = this.props.data
     const relatedProducts = data.allCollectionJson.edges
@@ -35,6 +20,7 @@ class ProductPage extends Component {
               {data.allProductJson.edges.map(({ node }) => (
                 <li
                   key={node.id}
+                  data-size={node.size}
                   className={
                     node.size === 1
                       ? "relative"
@@ -42,7 +28,7 @@ class ProductPage extends Component {
                   }
                   data-scroll
                 >
-                  <Image className="v-mid w-100" sizes={node.image.childImageSharp.sizes} alt={node.title} />
+                  <Image className="v-mid w-100" sizes={node.image.childImageSharp.sizes} sizesString={getSizesString(node.size)} alt={node.title} />
                 </li>
               ))}
             </ul>
@@ -50,7 +36,6 @@ class ProductPage extends Component {
 
           <div
             className="sidebar w-third-ns fl-ns fixed sticky"
-            data-sticky-class="fixed"
           >
             <Purchaser lineItem={{ id: 5, title: "Low Top Ghost White" }} />
           </div>
@@ -77,8 +62,16 @@ export const query = graphql`
           title
           image {
             childImageSharp {
-              sizes(maxWidth: 1080, quality: 90) {
-                ...GatsbyImageSharpSizes
+              sizes(quality: 90) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
               }
             }
           }
@@ -94,8 +87,16 @@ export const query = graphql`
           price
           image {
             childImageSharp {
-              sizes(maxWidth: 1080, quality: 90) {
-                ...GatsbyImageSharpSizes
+              sizes(quality: 90) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
               }
             }
           }

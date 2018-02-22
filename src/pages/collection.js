@@ -7,7 +7,7 @@ const CollectionPage = ({ data }) => (
   <main className="relative z-1 cf bg-black-10">
     <Spacer />
 
-    <ul className="list ma0 pa0 grid grid-3-columns">
+    <ul className="list ma0 pa0 grid-ns grid-2-columns-ns grid-3-columns-l">
       {data.allCollectionJson.edges.map(({ node }) => (
         <li
           key={node.id}
@@ -48,8 +48,16 @@ export const query = graphql`
           price
           image {
             childImageSharp {
-              sizes(maxWidth: 1080, quality: 90) {
-                ...GatsbyImageSharpSizes
+              sizes(quality: 90) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
               }
             }
           }

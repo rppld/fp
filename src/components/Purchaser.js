@@ -20,7 +20,9 @@ const mapDispatchToProps = dispatch => {
 
 const Purchaser = props => (
   <div className="pa4 pa5-xl">
-    <Spacer />
+    <div className="dn db-l">
+      <Spacer />
+    </div>
 
     <h1 className="f2 mt0 mb3 b lh-title">Low Top Ghost White</h1>
 

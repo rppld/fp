@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
-import Image from "gatsby-image"
+import Image from "../components/Image"
 import Cover from "../components/Cover"
 import Logo from "../components/Logo"
 
@@ -9,7 +9,7 @@ const getBlock = block => {
   const blocks = {
     image: () => {
       return (
-        <Image className="v-mid w-100 sibling" sizes={block.image.childImageSharp.sizes} alt={block.title} />
+        <Image className="v-mid w-100 sibling" sizes={block.image.childImageSharp.sizes} sizesString="(min-width: 60em) 34vw, 100vw" alt={block.title} />
       )
     },
     link: () => {
@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => (
           <li
             key={node.id}
             data-scroll
-            className="fl w-third-ns"
+            className="fl w-100 w-third-ns"
             data-parallax
             data-depth={node.depth}
           >
@@ -83,8 +83,16 @@ export const query = graphql`
           title
           image {
             childImageSharp {
-              sizes(maxWidth: 1080, quality: 90) {
-                ...GatsbyImageSharpSizes
+              sizes(quality: 90) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
               }
             }
           }
