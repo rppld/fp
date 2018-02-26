@@ -109,7 +109,7 @@ class Cart extends Component {
                   </span>
 
                   <p className="mt4 f5 f4-xl lh-copy white">
-                    Shipping costs will be calculated during checkout 🚚
+                    Shipping costs will be calculated during checkout.
                   </p>
                 </div>
               </div>
