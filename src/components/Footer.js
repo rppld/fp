@@ -39,7 +39,7 @@ const Footer = () => (
     </div>
 
     <div className="fl-ns w-20-ns tr-ns">
-      <p className="light-silver">All photos &copy; Filling Pieces.</p>
+      <p className="light-silver">Photos &amp; logo &copy; Filling Pieces.</p>
       <p className="light-silver">All rights reserved.</p>
     </div>
   </footer>
